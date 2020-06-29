@@ -1,0 +1,39 @@
+@import "./styles/variables";
+
+.app {
+  text-align: center;
+}
+
+.app-loading {
+  height: 100vh;
+  /*background: #3c3b39;*/
+}
+
+.app-background {
+  /*background: #3c3b39;*/
+}
+
+.app-content {
+  margin: 66px 16px 16px;
+  padding: 10px 24px;
+  /*background: #333;*/
+  border-radius: 3px;
+
+  @media screen and (max-width: 576px) {
+    margin: 50px 0 0;
+  }
+}
+
+.loading {
+  display: block;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.ant-page-header-title-view {
+  display: none;
+}

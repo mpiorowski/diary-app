@@ -1,0 +1,68 @@
+//  @PostMapping("/signup")
+  //  public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
+  //    if(userRepository.existsByUsername(signUpRequest.getUsername())) {
+  //      return new ResponseEntity(new ApiResponse(false, "Username is already taken!"),
+  //          HttpStatus.BAD_REQUEST);
+  //    }
+  //
+  //    if(userRepository.existsByEmail(signUpRequest.getEmail())) {
+  //      return new ResponseEntity(new ApiResponse(false, "Email Address already in use!"),
+  //          HttpStatus.BAD_REQUEST);
+  //    }
+  //
+  //    // Creating user's account
+  //    UserDao user = new UserDao(signUpRequest.getName(), signUpRequest.getUsername(),
+  //        signUpRequest.getEmail(), signUpRequest.getPassword());
+  //
+  //    user.setPassword(passwordEncoder.encode(user.getPassword()));
+  //
+  //    RoleDao userRole = roleRepository.findByName(RoleName.ROLE_USER)
+  //        .orElseThrow(() -> new AppException("UserDao RoleDao not set."));
+  //
+  //    user.setRoles(Collections.singleton(userRole));
+  //
+  //    UserDao result = userRepository.save(user);
+  //
+  //    URI location = ServletUriComponentsBuilder
+  //        .fromCurrentContextPath().path("/api/users/{username}")
+  //        .buildAndExpand(result.getUsername()).toUri();
+  //
+  //    return ResponseEntity.created(location).body(new ApiResponse(true, "UserDao registered
+  // successfully"));
+  //  }
+
+
+
+    //        roles
+    //            .stream()
+    //            .map(role -> new SimpleGrantedAuthority(role.getRoleName().name()))
+    //            .collect(Collectors.toList());
+
+
+
+  //  @Select("SELECT " +
+  //      "role_id as roleId, " +
+  //      "role_name as roleName " +
+  //      "FROM sys_roles " +
+  //      "JOIN sys_user_roles ON role_id = fk_role_id " +
+  //      "JOIN sys_users ON fk_user_id = user_id " +
+  //      "WHERE user_id = #{userId} "
+  //  )
+  //  Set<RoleDao> selectRolesByUserId(Long userId);
+
+
+
+  //  @NotNull
+  //  private Set<RoleDao> userRoles = new HashSet<>();
+
+
+
+  //  private final long MAX_AGE_SECS = 3600;
+  //
+  //  @Override
+  //  public void addCorsMappings(CorsRegistry registry) {
+  //    registry.addMapping("/**")
+  //        .allowedOrigins("*")
+  //        .allowedMethods("HEAD", "OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE")
+  //        .maxAge(MAX_AGE_SECS);
+  //  }

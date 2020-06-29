@@ -1,0 +1,87 @@
+@import '../styles/variables';
+
+.header-main-mobile {
+  height: 50px;
+  padding: 0;
+  border-bottom: @light-border;
+  position: fixed;
+  width: 100%;
+  //margin-bottom: 100px;
+
+  .header-menu-mobile {
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+
+    .header-submenu-icon-mobile {
+      display: inline-block;
+      border-right: @light-border;
+      height: 50px;
+      width: 100%;
+
+      :hover {
+        .icon, h2 {
+          color: @primary-color
+        }
+      }
+
+      .icon {
+        color: @text-color;
+        font-size: 26px;
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    .header-submenu-mobile {
+      border-right: @light-border;
+      height: 50px !important;
+      width: 100%;
+
+      :hover {
+        color: @primary-color
+      }
+
+      img {
+        position: relative;
+        top: 7px;
+        vertical-align: baseline;
+      }
+    }
+
+    .header-notification-mobile {
+      border-right: @light-border;
+
+      .header-dropdown {
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        //padding: 0 10px;
+        transition: all .3s;
+      }
+    }
+
+    h2 {
+      color: @text-color;
+      display: inline-block;
+      margin: 0 0 0 0;
+      font-weight: 600;
+      font-size: 18px;
+      font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+    }
+  }
+
+  .ant-dropdown-placement-bottomRight {
+    position: fixed !important;
+    z-index: 1;
+  }
+
+  .ant-popover {
+    z-index: 2;
+  }
+}
+
+
+
+

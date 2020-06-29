@@ -1,0 +1,68 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('org.postgresql:postgresql:42.2.5')
+    }
+}
+
+plugins {
+    id "org.flywaydb.flyway" version "5.2.4"
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'base.spring.react'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
+}
+
+ext {
+    set('springCloudVersion', 'Greenwich.RELEASE')
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.0'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    testImplementation 'org.springframework.security:spring-security-test'
+
+//    JWT TOKEN
+    compile 'io.jsonwebtoken:jjwt-api:0.10.5'
+    runtime 'io.jsonwebtoken:jjwt-impl:0.10.5',
+            'io.jsonwebtoken:jjwt-jackson:0.10.5'
+
+//    SERVLET
+    compile 'javax.servlet:javax.servlet-api:4.0.1'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5432/base'
+    user = 'admin'
+    password = 'admin'
+}
