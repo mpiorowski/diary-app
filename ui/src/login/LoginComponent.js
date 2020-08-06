@@ -95,9 +95,9 @@ class LoginForm extends Component {
                       content={
                         <div>
                           Zapomniałeś hasła? Zadzwoń do nas:
-                          <br/><b>696 042 610</b>
+                          <br/><b>333 444 555</b>
                           <br/>lub napisz do nas na maila:
-                          <br/><b><a href="mailto:agata.rakowska@pbs.pl">agata.rakowska@pbs.pl</a></b>
+                          <br/><b><a href="mailto:email@gmail.com">email@gmail.com</a></b>
                           <br/>
                           W treści podaj swój login oraz numer telefonu.
                         </div>

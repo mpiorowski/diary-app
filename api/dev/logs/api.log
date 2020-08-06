@@ -84,3 +84,93 @@ Instant is 	: 2020-06-29T11:51:02.144267Z
 2020-06-29 13:59:21.144 ERROR 40161 [svl5afbg--0000] [http-nio-9000-exec-1] p.a.s.JwtAuthenticationEntryPoint        : Responding with unauthorized error. Message - Full authentication is required to access this resource
 2020-06-29 14:00:35.856 ERROR 40161 [0qqwx4ih--0000] [http-nio-9000-exec-2] p.a.s.JwtAuthenticationEntryPoint        : Responding with unauthorized error. Message - Full authentication is required to access this resource
 2020-06-29 14:01:45.469 ERROR 40161 [y4l2dltt--0000] [http-nio-9000-exec-3] p.a.s.JwtAuthenticationEntryPoint        : Responding with unauthorized error. Message - Full authentication is required to access this resource
+2020-08-06 15:23:59.103  INFO 22778 [--] [restartedMain] pbs.api.ApiApplication                   : Starting ApiApplication on mat-MS-7B61 with PID 22778 (/home/mat/projects/diary-app/api/build/classes/java/main started by mat in /home/mat/projects/diary-app/api)
+2020-08-06 15:23:59.105 DEBUG 22778 [--] [restartedMain] pbs.api.ApiApplication                   : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2020-08-06 15:23:59.105  INFO 22778 [--] [restartedMain] pbs.api.ApiApplication                   : The following profiles are active: dev,swagger
+2020-08-06 15:24:01.225 DEBUG 22778 [--] [restartedMain] p.api.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2020-08-06 15:24:01.225 DEBUG 22778 [--] [restartedMain] pbs.api.logging.LogRequestId             : Filter 'logRequestId' configured for use
+2020-08-06 15:24:01.226 DEBUG 22778 [--] [restartedMain] pbs.api.logging.LogUserId                : Filter 'logUserId' configured for use
+2020-08-06 15:24:02.054  WARN 22778 [--] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 12.3 is newer than this version of Flyway and support has not been tested.
+2020-08-06 15:24:02.529  INFO 22778 [--] [restartedMain] pbs.api.ApiApplication                   : Started ApiApplication in 3.723 seconds (JVM running for 3.973)
+2020-08-06 15:24:02.538  INFO 22778 [--] [restartedMain] pbs.api.ApiApplication                   : 
+----------------------------------------------------------
+	Application 'pbs-diary' is running! Access URLs:
+	Local: 		http://localhost:9000/
+	External: 	http://127.0.1.1:9000/
+	Profile(s): 	[dev, swagger]
+----------------------------------------------------------
+Time is 	: 2020-08-06T13:24:02.538118
+Instant is 	: 2020-08-06T13:24:02.538165Z
+----------------------------------------------------------
+
+2020-08-06 15:25:15.427 ERROR 22778 [oyzevist--0000] [http-nio-9000-exec-1] p.a.s.JwtAuthenticationTokenProvider     : Invalid JWT signature
+2020-08-06 15:25:15.436 ERROR 22778 [oyzevist--0000] [http-nio-9000-exec-1] p.a.s.JwtAuthenticationEntryPoint        : Responding with unauthorized error. Message - Full authentication is required to access this resource
+2020-08-06 15:25:45.642 ERROR 22778 [ybffxgw9--0000] [http-nio-9000-exec-2] p.a.s.JwtAuthenticationTokenProvider     : Invalid JWT signature
+2020-08-06 15:25:45.709 DEBUG 22778 [ybffxgw9--0000] [http-nio-9000-exec-2] pbs.api.logging.AopLogging               : Enter: pbs.api.rest.auth.AuthController.logInByUserName() with argument[s] = [LoginRequestDto(userName=admin, userPassword=pass)]
+2020-08-06 15:25:45.799 DEBUG 22778 [ybffxgw9--0000] [http-nio-9000-exec-2] p.a.d.sys.AuthDao.authUserByNameOrEmail  : ==>  Preparing: select * from sys_users where ( user_name = ? or user_email = ? ) 
+2020-08-06 15:25:45.809 DEBUG 22778 [ybffxgw9--0000] [http-nio-9000-exec-2] p.a.d.sys.AuthDao.authUserByNameOrEmail  : ==> Parameters: admin(String), admin(String)
+2020-08-06 15:25:45.821 DEBUG 22778 [ybffxgw9--0000] [http-nio-9000-exec-2] p.a.d.sys.AuthDao.authUserByNameOrEmail  : <==      Total: 1
+2020-08-06 15:25:45.844 DEBUG 22778 [ybffxgw9--0000] [http-nio-9000-exec-2] pbs.api.logging.AopLogging               : Exit: pbs.api.rest.auth.AuthController.logInByUserName() with result = <200 OK OK,LoginResponseDto(authToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTk2NzIwMzQ1LCJleHAiOjE1OTczMjUxNDV9.jRs6fZ-5SMSxsoa-4abuMWn9l_YEVX0XNb3rCC4BFKdNAHUCnIXGwqp8J7IT6uXuscJUjSl7OI2Gd1k5aDsf0w, tokenType=Bearer),[]>
+2020-08-06 15:25:45.867 DEBUG 22778 [sd9vxl1q--0000] [http-nio-9000-exec-3] pbs.api.domain.sys.AuthDao.authUserById  : ==>  Preparing: select * from sys_users where id = ? 
+2020-08-06 15:25:45.867 DEBUG 22778 [sd9vxl1q--0000] [http-nio-9000-exec-3] pbs.api.domain.sys.AuthDao.authUserById  : ==> Parameters: 2(Long)
+2020-08-06 15:25:45.868 DEBUG 22778 [sd9vxl1q--0000] [http-nio-9000-exec-3] pbs.api.domain.sys.AuthDao.authUserById  : <==      Total: 1
+2020-08-06 15:25:45.878 DEBUG 22778 [sd9vxl1q--0002] [http-nio-9000-exec-3] pbs.api.logging.AopLogging               : Enter: pbs.api.rest.auth.AuthController.getUser() with argument[s] = [CustomUserDetails{userId=2, userName='admin', userEmail='admin@gmail.com', userPassword='$2a$08$4JJXHCZjbhmgBBdczobBRukNCsWjgaBX81eZQO7CCqGz909vCCdhO', authorities=[ROLE_ADMIN]}]
+2020-08-06 15:25:45.879 DEBUG 22778 [sd9vxl1q--0002] [http-nio-9000-exec-3] pbs.api.logging.AopLogging               : Exit: pbs.api.rest.auth.AuthController.getUser() with result = <200 OK OK,pbs.api.rest.users.dto.UserSummaryDto@67249022,[]>
+2020-08-06 15:25:45.977 DEBUG 22778 [gade0za6--0000] [http-nio-9000-exec-4] pbs.api.domain.sys.AuthDao.authUserById  : ==>  Preparing: select * from sys_users where id = ? 
+2020-08-06 15:25:45.978 DEBUG 22778 [gade0za6--0000] [http-nio-9000-exec-4] pbs.api.domain.sys.AuthDao.authUserById  : ==> Parameters: 2(Long)
+2020-08-06 15:25:45.982 DEBUG 22778 [gade0za6--0000] [http-nio-9000-exec-4] pbs.api.domain.sys.AuthDao.authUserById  : <==      Total: 1
+2020-08-06 15:25:45.997 DEBUG 22778 [hmapekix--0000] [http-nio-9000-exec-6] pbs.api.domain.sys.AuthDao.authUserById  : ==>  Preparing: select * from sys_users where id = ? 
+2020-08-06 15:25:45.997 DEBUG 22778 [hmapekix--0000] [http-nio-9000-exec-6] pbs.api.domain.sys.AuthDao.authUserById  : ==> Parameters: 2(Long)
+2020-08-06 15:25:45.997 DEBUG 22778 [rkcbilro--0000] [http-nio-9000-exec-5] pbs.api.domain.sys.AuthDao.authUserById  : ==>  Preparing: select * from sys_users where id = ? 
+2020-08-06 15:25:45.998 DEBUG 22778 [rkcbilro--0000] [http-nio-9000-exec-5] pbs.api.domain.sys.AuthDao.authUserById  : ==> Parameters: 2(Long)
+2020-08-06 15:25:46.005 DEBUG 22778 [rkcbilro--0000] [http-nio-9000-exec-5] pbs.api.domain.sys.AuthDao.authUserById  : <==      Total: 1
+2020-08-06 15:25:46.005 DEBUG 22778 [hmapekix--0000] [http-nio-9000-exec-6] pbs.api.domain.sys.AuthDao.authUserById  : <==      Total: 1
+2020-08-06 15:25:46.006 DEBUG 22778 [gade0za6--0002] [http-nio-9000-exec-4] pbs.api.logging.AopLogging               : Enter: pbs.api.rest.notifications.NotificationsController.findAll() with argument[s] = []
+2020-08-06 15:25:46.008 DEBUG 22778 [hmapekix--0002] [http-nio-9000-exec-6] pbs.api.logging.AopLogging               : Enter: pbs.api.rest.operations.OperationsController.findAll() with argument[s] = []
+2020-08-06 15:25:46.030 DEBUG 22778 [gade0za6--0002] [http-nio-9000-exec-4] p.a.d.n.NotificationDao.findAllByType    : ==>  Preparing: select * from notifications where deleted is false and notification_type = ? order by created_at desc 
+2020-08-06 15:25:46.030 DEBUG 22778 [gade0za6--0002] [http-nio-9000-exec-4] p.a.d.n.NotificationDao.findAllByType    : ==> Parameters: diary-answer(String)
+2020-08-06 15:25:46.030 DEBUG 22778 [rkcbilro--0002] [http-nio-9000-exec-5] pbs.api.logging.AopLogging               : Enter: pbs.api.rest.diaries.DiariesController.findAll() with argument[s] = [DiaryFilters(userId=null, date=null, notification=null)]
+2020-08-06 15:25:46.032 DEBUG 22778 [gade0za6--0002] [http-nio-9000-exec-4] p.a.d.n.NotificationDao.findAllByType    : <==      Total: 0
+2020-08-06 15:25:46.033 DEBUG 22778 [gade0za6--0002] [http-nio-9000-exec-4] pbs.api.logging.AopLogging               : Exit: pbs.api.rest.notifications.NotificationsController.findAll() with result = <204 NO_CONTENT No Content,[]>
+2020-08-06 15:25:46.033 DEBUG 22778 [hmapekix--0002] [http-nio-9000-exec-6] p.a.d.operations.OperationsDao.findAll   : ==>  Preparing: select * from operations where deleted is false order by operation_priority asc 
+2020-08-06 15:25:46.034 DEBUG 22778 [hmapekix--0002] [http-nio-9000-exec-6] p.a.d.operations.OperationsDao.findAll   : ==> Parameters: 
+2020-08-06 15:25:46.035 DEBUG 22778 [hmapekix--0002] [http-nio-9000-exec-6] p.a.d.operations.OperationsDao.findAll   : <==      Total: 0
+2020-08-06 15:25:46.045 DEBUG 22778 [hmapekix--0002] [http-nio-9000-exec-6] pbs.api.logging.AopLogging               : Exit: pbs.api.rest.operations.OperationsController.findAll() with result = <200 OK OK,[],[]>
+2020-08-06 15:25:46.137 DEBUG 22778 [rkcbilro--0002] [http-nio-9000-exec-5] p.a.d.d.DiaryDao.findByFilter_COUNT      : ==>  Preparing: select count(0) from (select * from diaries where deleted is false order by created_at desc) tmp_count 
+2020-08-06 15:25:46.138 DEBUG 22778 [rkcbilro--0002] [http-nio-9000-exec-5] p.a.d.d.DiaryDao.findByFilter_COUNT      : ==> Parameters: 
+2020-08-06 15:25:46.139 DEBUG 22778 [rkcbilro--0002] [http-nio-9000-exec-5] p.a.d.d.DiaryDao.findByFilter_COUNT      : <==      Total: 1
+2020-08-06 15:25:46.141 DEBUG 22778 [rkcbilro--0002] [http-nio-9000-exec-5] p.a.d.diaries.DiaryDao.findByFilter      : ==>  Preparing: select * from diaries where deleted is false order by created_at desc LIMIT ? 
+2020-08-06 15:25:46.142 DEBUG 22778 [rkcbilro--0002] [http-nio-9000-exec-5] p.a.d.diaries.DiaryDao.findByFilter      : ==> Parameters: 10(Integer)
+2020-08-06 15:25:46.166 DEBUG 22778 [rkcbilro--0002] [http-nio-9000-exec-5] p.a.d.diaries.DiaryDao.findByFilter      : <==      Total: 5
+2020-08-06 15:25:46.172 DEBUG 22778 [rkcbilro--0002] [http-nio-9000-exec-5] pbs.api.logging.AopLogging               : Exit: pbs.api.rest.diaries.DiariesController.findAll() with result = <200 OK OK,[DiaryResponseDto(diaryType=Płatność bezgotówkowa z użyciem telefonu (wpisz za co) - Płatność Apple Pay, diaryDescription=wpis testowy, diaryLike=2.0, diaryAmount=2, diaryDate=2020-08-06, diaryAuthor=UserDataDto(userName=user1, userEmail=user@gmail.com), answer=null, question=null, notification=null), DiaryResponseDto(diaryType=Płatność bezgotówkowa z użyciem telefonu (wpisz za co) - Płatność Apple Pay, diaryDescription=test-3, diaryLike=2.0, diaryAmount=2, diaryDate=2020-08-06, diaryAuthor=UserDataDto(userName=user3, userEmail=user2@gmail.com), answer=null, question=null, notification=null), DiaryResponseDto(diaryType=Płatność bezgotówkowa z użyciem telefonu (wpisz za co) - Płatność Apple Pay, diaryDescription=Lorem Ipsum is simply dummy text of the printing and typesetting industry., diaryLike=2.0, diaryAmount=2, diaryDate=2020-08-06, diaryAuthor=UserDataDto(userName=user3, userEmail=user2@gmail.com), answer=null, question=null, notification=null), DiaryResponseDto(diaryType=Płatność bezgotówkowa z użyciem telefonu (wpisz za co) - Płatność Apple Pay, diaryDescription=Lorem Ipsum is simply dummy text of the printing and typesetting industry., diaryLike=2.0, diaryAmount=2, diaryDate=2020-08-06, diaryAuthor=UserDataDto(userName=user3, userEmail=user2@gmail.com), answer=null, question=null, notification=null), DiaryResponseDto(diaryType=Płatność bezgotówkowa z użyciem telefonu (wpisz za co) - Płatność Apple Pay, diaryDescription=Lorem Ipsum is simply dummy text of the printing and typesetting industry., diaryLike=2.0, diaryAmount=2, diaryDate=2020-08-06, diaryAuthor=UserDataDto(userName=user3, userEmail=user2@gmail.com), answer=null, question=null, notification=null)],[]>
+2020-08-06 15:25:54.878 DEBUG 22778 [kfqbv8js--0000] [http-nio-9000-exec-7] pbs.api.logging.AopLogging               : Enter: pbs.api.rest.auth.AuthController.logInByUserName() with argument[s] = [LoginRequestDto(userName=user1, userPassword=pass)]
+2020-08-06 15:25:54.879 DEBUG 22778 [kfqbv8js--0000] [http-nio-9000-exec-7] p.a.d.sys.AuthDao.authUserByNameOrEmail  : ==>  Preparing: select * from sys_users where ( user_name = ? or user_email = ? ) 
+2020-08-06 15:25:54.879 DEBUG 22778 [kfqbv8js--0000] [http-nio-9000-exec-7] p.a.d.sys.AuthDao.authUserByNameOrEmail  : ==> Parameters: user1(String), user1(String)
+2020-08-06 15:25:54.880 DEBUG 22778 [kfqbv8js--0000] [http-nio-9000-exec-7] p.a.d.sys.AuthDao.authUserByNameOrEmail  : <==      Total: 1
+2020-08-06 15:25:54.896 DEBUG 22778 [kfqbv8js--0000] [http-nio-9000-exec-7] pbs.api.logging.AopLogging               : Exit: pbs.api.rest.auth.AuthController.logInByUserName() with result = <200 OK OK,LoginResponseDto(authToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTk2NzIwMzU0LCJleHAiOjE1OTczMjUxNTR9.Ig_axIcVxheo-GpfVScMmMlsZydH-bsU-GQI_U-bYglSP1aPUMEuzXbUmxfXeB1e1rVQsA3vHMgdUc_lTQy4eg, tokenType=Bearer),[]>
+2020-08-06 15:25:54.909 DEBUG 22778 [wlnqihrg--0000] [http-nio-9000-exec-8] pbs.api.domain.sys.AuthDao.authUserById  : ==>  Preparing: select * from sys_users where id = ? 
+2020-08-06 15:25:54.909 DEBUG 22778 [wlnqihrg--0000] [http-nio-9000-exec-8] pbs.api.domain.sys.AuthDao.authUserById  : ==> Parameters: 3(Long)
+2020-08-06 15:25:54.910 DEBUG 22778 [wlnqihrg--0000] [http-nio-9000-exec-8] pbs.api.domain.sys.AuthDao.authUserById  : <==      Total: 1
+2020-08-06 15:25:54.912 DEBUG 22778 [wlnqihrg--0003] [http-nio-9000-exec-8] pbs.api.logging.AopLogging               : Enter: pbs.api.rest.auth.AuthController.getUser() with argument[s] = [CustomUserDetails{userId=3, userName='user1', userEmail='user@gmail.com', userPassword='$2a$08$njh67GLLIRk572Zr0br/3.E.n.gDVDDHdiJcges9ySyjm5ChL3FHu', authorities=[ROLE_USER]}]
+2020-08-06 15:25:54.912 DEBUG 22778 [wlnqihrg--0003] [http-nio-9000-exec-8] pbs.api.logging.AopLogging               : Exit: pbs.api.rest.auth.AuthController.getUser() with result = <200 OK OK,pbs.api.rest.users.dto.UserSummaryDto@361fd86e,[]>
+2020-08-06 15:25:54.959 DEBUG 22778 [oqvjd9th--0000] [http-nio-9000-exec-9] pbs.api.domain.sys.AuthDao.authUserById  : ==>  Preparing: select * from sys_users where id = ? 
+2020-08-06 15:25:54.959 DEBUG 22778 [oqvjd9th--0000] [http-nio-9000-exec-9] pbs.api.domain.sys.AuthDao.authUserById  : ==> Parameters: 3(Long)
+2020-08-06 15:25:54.960 DEBUG 22778 [0rbdt3kg--0000] [http-nio-9000-exec-10] pbs.api.domain.sys.AuthDao.authUserById  : ==>  Preparing: select * from sys_users where id = ? 
+2020-08-06 15:25:54.960 DEBUG 22778 [oqvjd9th--0000] [http-nio-9000-exec-9] pbs.api.domain.sys.AuthDao.authUserById  : <==      Total: 1
+2020-08-06 15:25:54.961 DEBUG 22778 [0rbdt3kg--0000] [http-nio-9000-exec-10] pbs.api.domain.sys.AuthDao.authUserById  : ==> Parameters: 3(Long)
+2020-08-06 15:25:54.961 DEBUG 22778 [0rbdt3kg--0000] [http-nio-9000-exec-10] pbs.api.domain.sys.AuthDao.authUserById  : <==      Total: 1
+2020-08-06 15:25:54.962 DEBUG 22778 [oqvjd9th--0003] [http-nio-9000-exec-9] pbs.api.logging.AopLogging               : Enter: pbs.api.rest.notifications.NotificationsController.findAll() with argument[s] = []
+2020-08-06 15:25:54.962 DEBUG 22778 [oqvjd9th--0003] [http-nio-9000-exec-9] p.a.d.n.NotificationDao.findByType       : ==>  Preparing: select * from notifications where deleted is false and notification_type = ? and fk_user_id = ? order by created_at desc 
+2020-08-06 15:25:54.963 DEBUG 22778 [oqvjd9th--0003] [http-nio-9000-exec-9] p.a.d.n.NotificationDao.findByType       : ==> Parameters: diary-question(String), 3(Long)
+2020-08-06 15:25:54.963 DEBUG 22778 [0rbdt3kg--0003] [http-nio-9000-exec-10] pbs.api.logging.AopLogging               : Enter: pbs.api.rest.diaries.DiariesController.findByDate() with argument[s] = [DiaryFilters(userId=null, date=2020-08-06, notification=null)]
+2020-08-06 15:25:54.963 DEBUG 22778 [oqvjd9th--0003] [http-nio-9000-exec-9] p.a.d.n.NotificationDao.findByType       : <==      Total: 0
+2020-08-06 15:25:54.964 DEBUG 22778 [oqvjd9th--0003] [http-nio-9000-exec-9] pbs.api.logging.AopLogging               : Exit: pbs.api.rest.notifications.NotificationsController.findAll() with result = <204 NO_CONTENT No Content,[]>
+2020-08-06 15:25:54.964 DEBUG 22778 [0rbdt3kg--0003] [http-nio-9000-exec-10] p.a.d.diaries.DiaryDao.findByFilter      : ==>  Preparing: select * from diaries where deleted is false and diary_date >= TO_DATE(?, 'YYYY-MM-DD') and diary_date < TO_DATE(?, 'YYYY-MM-DD') + interval '1 day' and fk_user_id = ? order by created_at desc 
+2020-08-06 15:25:54.964 DEBUG 22778 [0rbdt3kg--0003] [http-nio-9000-exec-10] p.a.d.diaries.DiaryDao.findByFilter      : ==> Parameters: 2020-08-06(String), 2020-08-06(String), 3(Long)
+2020-08-06 15:25:54.966 DEBUG 22778 [0rbdt3kg--0003] [http-nio-9000-exec-10] p.a.d.diaries.DiaryDao.findByFilter      : <==      Total: 1
+2020-08-06 15:25:54.967 DEBUG 22778 [0rbdt3kg--0003] [http-nio-9000-exec-10] pbs.api.logging.AopLogging               : Exit: pbs.api.rest.diaries.DiariesController.findByDate() with result = <200 OK OK,[DiaryResponseDto(diaryType=Płatność bezgotówkowa z użyciem telefonu (wpisz za co) - Płatność Apple Pay, diaryDescription=wpis testowy, diaryLike=2.0, diaryAmount=2, diaryDate=2020-08-06, diaryAuthor=UserDataDto(userName=user1, userEmail=user@gmail.com), answer=null, question=null, notification=null)],[]>
+2020-08-06 15:27:40.159 ERROR 22778 [pc7ktiy6--0000] [http-nio-9000-exec-1] p.a.s.JwtAuthenticationEntryPoint        : Responding with unauthorized error. Message - Full authentication is required to access this resource
+2020-08-06 15:27:57.483 ERROR 22778 [tdbkgncf--0000] [http-nio-9000-exec-2] p.a.s.JwtAuthenticationEntryPoint        : Responding with unauthorized error. Message - Full authentication is required to access this resource
+2020-08-06 15:28:14.321 ERROR 22778 [pzqvnic5--0000] [http-nio-9000-exec-3] p.a.s.JwtAuthenticationEntryPoint        : Responding with unauthorized error. Message - Full authentication is required to access this resource
+2020-08-06 15:28:27.394 ERROR 22778 [jbge9uj9--0000] [http-nio-9000-exec-4] p.a.s.JwtAuthenticationEntryPoint        : Responding with unauthorized error. Message - Full authentication is required to access this resource
+2020-08-06 15:29:12.886 ERROR 22778 [bdtnehhi--0000] [http-nio-9000-exec-6] p.a.s.JwtAuthenticationEntryPoint        : Responding with unauthorized error. Message - Full authentication is required to access this resource
