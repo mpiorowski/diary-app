@@ -62,12 +62,9 @@ usernames: user1, user2, user3
 password: pass
 
 ## Production/Test deployment using docker-compose with downsized containers
-<<<<<<< HEAD
-=======
 
 (Not sure if still works :) )
 
->>>>>>> develop
 Production and test environments are set up using multistage docker containers.
 The only prerequisites here is docker/docker-compose.
 Production deployment need a working ssl certificate, configured in prod/nginx.conf file.
